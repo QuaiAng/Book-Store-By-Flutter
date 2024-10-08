@@ -17,3 +17,14 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - images/bn1.png
+    - images/bn2.png
+    - images/bn3.png
+    - images/bn4.png
+    - images/bn5.png
+    - images/bn6.png
+    - images/bn7.png
+    - images/thinkagain.png
+
