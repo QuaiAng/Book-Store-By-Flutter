@@ -44,13 +44,11 @@ class SignUp extends StatelessWidget {
               const SizedBox(height: 20),
               Button(onTapSignInButton: onTapSignUpButton, textOnButton: 'SIGN UP'),
               const SizedBox(height: 60),
-              const Text(
-                   "SIGN IN",
-                    style: TextStyle(
-                    fontSize: 13,
-                    decoration: TextDecoration.underline,
-                    color: Color.fromARGB(255, 1, 45, 121)
-                    ),
+              TextButton(
+                    onPressed: (){
+                        onTapSignInButton(context);
+                    }, 
+                    child: const Text("Sign up")
                   ),
             ],
           ),
@@ -61,5 +59,9 @@ class SignUp extends StatelessWidget {
   }
 
   void onTapSignUpButton() {
+  }
+  
+  void onTapSignInButton(BuildContext context) {
+    Navigator.pop(context);
   }
 }

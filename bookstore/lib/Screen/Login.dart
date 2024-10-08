@@ -6,11 +6,19 @@ import 'package:flutter/material.dart';
 // Controller of TextField
 final TextEditingController ctrlUsername = TextEditingController();
 final TextEditingController ctrlPassword = TextEditingController();
+String content = "";
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({super.key});
 
   @override
+  State<StatefulWidget> createState() {
+    return LoginState();
+  }
+}
+
+class LoginState extends State<Login>{
+ @override
   Widget build(BuildContext context) {
 
       return Scaffold(
@@ -32,29 +40,28 @@ class Login extends StatelessWidget {
               const SizedBox(height: 15),
               Input(hintText: "Password", txtController: ctrlPassword),
               const SizedBox(height: 20),
-              Button(onTapSignInButton: onTapSignInButton, textOnButton: 'LOGIN'),
+              Button(onTapSignInButton: (){onTapSignInButton(context);}, textOnButton: 'LOGIN'),
+              const SizedBox(height: 30),
+              Text(content, style: const TextStyle(color: Colors.red, fontSize: 14),),
               const SizedBox(height: 80),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                    Text(
-                "SIGN UP",
-                style: TextStyle(
-                  fontSize: 13,
-                  decoration: TextDecoration.underline,
-                  color: Color.fromARGB(255, 1, 45, 121)
-                ),
-              ),
-                SizedBox(width: 20),
-                Text(
-                   "I FORGOT PASSWORD !",
-                    style: TextStyle(
-                    fontSize: 13,
-                    decoration: TextDecoration.underline,
-                    color: Color.fromARGB(255, 1, 45, 121)
-                    ),
+                  
+                  TextButton(
+                    onPressed: (){
+                        onTapSignUpButton(context);
+                    }, 
+                    child: const Text("Sign up")
                   ),
+                  const SizedBox(width: 20),
+                  TextButton(
+                      onPressed: (){
+                          onTapForgotPasswordButton(context);
+                      }, 
+                      child: const Text("Forgot password")
+                    ),
                 ],
               ),
               
@@ -65,6 +72,26 @@ class Login extends StatelessWidget {
    
   }
 
-  void onTapSignInButton() {
+  void onTapSignInButton(BuildContext context) {
+    if(ctrlUsername.text.toString().isNotEmpty && ctrlPassword.text.toString().isNotEmpty){
+        Navigator.pop(context);
+        Navigator.pushNamed(context, '/Home');
+    }
+    else{
+      
+      setState(() {
+        content = "Username or password is incorrect";
+      });
+    }
+   
   }
+  
+  void onTapSignUpButton(BuildContext context) {
+    Navigator.pushNamed(context, '/SignUp');
+  }
+  
+  void onTapForgotPasswordButton(BuildContext context) {
+    Navigator.pushNamed(context, '/');
+  }
+
 }

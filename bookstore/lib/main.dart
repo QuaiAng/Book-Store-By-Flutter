@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:bookstore/Classes/Book.dart';
 import 'package:bookstore/Screen/Home.dart';
+import 'package:bookstore/Screen/Login.dart';
+import 'package:bookstore/Screen/SignUp.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -42,7 +44,13 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       scrollBehavior: const MyCustomScrollBehavior(),
-      home: Home(imagesProduct: imagesProduct,)
+      // home: Home(imagesProduct: imagesProduct,)
+      initialRoute: '/Login',
+      routes: {
+        '/Login': (context) => const Login(),
+        '/SignUp': (context) => const SignUp(),
+        '/Home': (context) => Home(imagesProduct: imagesProduct)
+      },
     );
   }
 
