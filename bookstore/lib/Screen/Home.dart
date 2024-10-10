@@ -1,5 +1,7 @@
 import 'package:bookstore/Classes/Book.dart';
+import 'package:bookstore/Section/CustomBottomAppbar.dart';
 import 'package:bookstore/Section/Item.dart';
+import 'package:bookstore/Section/LeftDrawer.dart';
 
 import 'package:flutter/material.dart';
 
@@ -28,56 +30,8 @@ import 'package:flutter/material.dart';
             backgroundColor: const Color.fromARGB(255, 0, 7, 73),
             foregroundColor: Colors.white,
           ),
-          bottomNavigationBar: BottomAppBar(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text("Trang chủ"),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text("Giới thiệu"),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text("Tài khoản"),
-                  ),
-                ],
-            ),
-          ),
-          drawer: Drawer(
-            child: ListView(
-              children: [
-                // DrawerHeader(
-                //   decoration: BoxDecoration(color: Color.fromARGB(255, 0, 7, 73)),
-                //   child: Text('Directory', style: TextStyle(color: Colors.white, fontSize: 20))
-                // ),
-                Container(
-                  height: 50,
-                  alignment: Alignment.center,
-                  color: const Color.fromARGB(255, 0, 7, 73),
-                  child: const ListTile(contentPadding: EdgeInsets.only(left: 50),title: Text("Directory", style: TextStyle(color: Colors.white),)),
-                ),
-                const ListTile(
-                  title: Text("1"),
-                ),
-                const ListTile(
-                  title: Text("2"),
-                ),
-                const ListTile(
-                  title: Text("3"),
-                ),
-                const ListTile(
-                  title: Text("4"),
-                ),
-                const ListTile(
-                  title: Text("5"),
-                ),
-              ],
-            ),
-          ),
+          bottomNavigationBar: const Custombottomappbar(),
+          drawer: const Leftdrawer(),
           body: SafeArea(
             child: Column(
               children: [
@@ -95,13 +49,6 @@ import 'package:flutter/material.dart';
                       })
                     ),
                 ),
-
-                // ListView.builder(
-                //   itemCount: imagesProduct.length,
-                //   itemBuilder: (context, index){
-                //     return Item(path: imagesProduct[index].path, bookTitle: imagesProduct[index].title, bookPrice: imagesProduct[index].price.toString());
-                //   }
-                // )
               Expanded(
               child: ListView.builder(
                 itemCount: imagesProduct.length,

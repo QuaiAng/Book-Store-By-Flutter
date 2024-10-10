@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:bookstore/Classes/Book.dart';
+import 'package:bookstore/Screen/Detail.dart';
 import 'package:bookstore/Screen/Home.dart';
 import 'package:bookstore/Screen/Login.dart';
 import 'package:bookstore/Screen/SignUp.dart';
@@ -49,15 +50,13 @@ class MainApp extends StatelessWidget {
       routes: {
         '/Login': (context) => const Login(),
         '/SignUp': (context) => const SignUp(),
-        '/Home': (context) => Home(imagesProduct: imagesProduct)
+        '/Home': (context) => Home(imagesProduct: imagesProduct),
+        '/Detail': (context) => const Detail(),
       },
     );
   }
 
-  
 
-  void onTapSignInButton() {
-  }
 }
 
 
