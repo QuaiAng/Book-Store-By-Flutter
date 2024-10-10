@@ -8,6 +8,8 @@ final TextEditingController ctrlUsername = TextEditingController();
 final TextEditingController ctrlPassword = TextEditingController();
 String content = "";
 
+
+
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -18,12 +20,15 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login>{
+  final _formKey = GlobalKey<FormState>();
  @override
   Widget build(BuildContext context) {
 
-      return Scaffold(
+      return Form(
+        key: _formKey,
+        child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(30.0), 
+          padding: const EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,9 +41,9 @@ class LoginState extends State<Login>{
                 ),
               ),
               const SizedBox(height: 30),
-              Input(hintText: "User name", txtController: ctrlUsername),
+              Input(hintText: "User name", txtController: ctrlUsername, errorText: 'Please enter your user name', isPassword: false,),
               const SizedBox(height: 15),
-              Input(hintText: "Password", txtController: ctrlPassword),
+              Input(hintText: "Password", txtController: ctrlPassword, errorText: 'Please enter your password', isPassword: true,),
               const SizedBox(height: 20),
               Button(onTapSignInButton: (){onTapSignInButton(context);}, textOnButton: 'LOGIN'),
               const SizedBox(height: 30),
@@ -48,40 +53,45 @@ class LoginState extends State<Login>{
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  
+
                   TextButton(
                     onPressed: (){
                         onTapSignUpButton(context);
-                    }, 
+                    },
                     child: const Text("Sign up")
                   ),
                   const SizedBox(width: 20),
                   TextButton(
                       onPressed: (){
                           onTapForgotPasswordButton(context);
-                      }, 
+                      },
                       child: const Text("Forgot password")
                     ),
                 ],
               ),
-              
+
             ],
           ),
         )
-      );
+      )
+    );
    
   }
 
   void onTapSignInButton(BuildContext context) {
-    if(ctrlUsername.text.toString().isNotEmpty && ctrlPassword.text.toString().isNotEmpty){
-        Navigator.pop(context);
-        Navigator.pushNamed(context, '/Home');
-    }
-    else{
+    // if(ctrlUsername.text.toString().isNotEmpty && ctrlPassword.text.toString().isNotEmpty){
+
+        
+    // }
+    // else{
       
-      setState(() {
-        content = "Username or password is incorrect";
-      });
+    //   setState(() {
+    //     content = "Username or password is incorrect";
+    //   });
+    // }
+
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushNamed(context, '/Home');
     }
    
   }
