@@ -1,3 +1,4 @@
+import 'package:bookstore/Classes/book.dart';
 import 'package:bookstore/Section/CustomBottomAppbar.dart';
 import 'package:bookstore/Section/LeftDrawer.dart';
 import 'package:flutter/material.dart';
@@ -5,8 +6,12 @@ import 'package:flutter/material.dart';
 class Detail extends StatelessWidget {
   const Detail({super.key});
 
+
   @override
   Widget build(BuildContext context) {
+    
+    final Book book = ModalRoute.of(context)!.settings.arguments as Book;
+    
     return Scaffold(
         appBar: AppBar(
             title: const Text("DETAIL PRODUCT"),
@@ -17,11 +22,7 @@ class Detail extends StatelessWidget {
           bottomNavigationBar: const Custombottomappbar(),
           body: ListView(
             children: [
-              for (int i = 0; i < 150; i++)
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("INDEX: $i", style: const TextStyle(fontSize: 20)),
-                ),
+              Text(book.title)
             ],
           )
     );

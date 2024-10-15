@@ -1,4 +1,4 @@
-import 'package:bookstore/Classes/Book.dart';
+import 'package:bookstore/Classes/book.dart';
 import 'package:bookstore/Section/CustomBottomAppbar.dart';
 import 'package:bookstore/Section/Item.dart';
 import 'package:bookstore/Section/LeftDrawer.dart';
@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 
 
   class Home extends StatelessWidget {
-    const Home({super.key, required this.imagesProduct});
-    final List<Book> imagesProduct;
+    const Home({super.key, required this.products});
+    final List<Book> products;
 
     @override
     Widget build(BuildContext context) {
@@ -51,16 +51,19 @@ import 'package:flutter/material.dart';
                 ),
               Expanded(
               child: ListView.builder(
-                itemCount: imagesProduct.length,
+                itemCount: products.length,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
                       Item(
-                        path: imagesProduct[index].path, 
-                        bookTitle: imagesProduct[index].title, 
-                        bookPrice: "${imagesProduct[index].price} VND",
+                        path: products[index].path, 
+                        bookTitle: products[index].title, 
+                        bookPrice: "${products[index].price} VND",
+                        onTap: (){
+                          Navigator.pushNamed(context, '/Detail', arguments: products[index]);
+                        },
                       ),
-                      if (index < imagesProduct.length - 1) const Divider(), // Thêm Divider
+                      if (index < products.length - 1) const Divider(), // Thêm Divider
                     ],
                   );
                   

@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:bookstore/Classes/Book.dart';
+import 'package:bookstore/Classes/book.dart';
 import 'package:bookstore/Screen/Detail.dart';
 import 'package:bookstore/Screen/Home.dart';
 import 'package:bookstore/Screen/Login.dart';
@@ -22,19 +22,18 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
       };
 }
 
-
-List<Book> imagesProduct = [
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-  Book("Think Again", 4000000, "images/thinkagain.png"),
-
+List<Book> products = [
+  Book(id: "H1", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H2", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H3", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H4", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H5", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H6", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H7", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H8", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H9", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
+  Book(id: "H0", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),  
+  
 ];
 // Class main
 class MainApp extends StatelessWidget {
@@ -50,7 +49,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/Login': (context) => const Login(),
         '/SignUp': (context) => const SignUp(),
-        '/Home': (context) => Home(imagesProduct: imagesProduct),
+        '/Home': (context) => Home(products: products),
         '/Detail': (context) => const Detail(),
       },
     );

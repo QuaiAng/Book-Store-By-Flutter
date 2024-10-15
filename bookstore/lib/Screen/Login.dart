@@ -79,16 +79,6 @@ class LoginState extends State<Login>{
   }
 
   void onTapSignInButton(BuildContext context) {
-    // if(ctrlUsername.text.toString().isNotEmpty && ctrlPassword.text.toString().isNotEmpty){
-
-        
-    // }
-    // else{
-      
-    //   setState(() {
-    //     content = "Username or password is incorrect";
-    //   });
-    // }
 
     if (_formKey.currentState!.validate()) {
       Navigator.pushNamed(context, '/Home');
