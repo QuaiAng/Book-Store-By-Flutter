@@ -46,15 +46,15 @@ class SignUpState extends State<SignUp>{
                 ),
               ),
               const SizedBox(height: 30),
-              Input(hintText: "Your full name", txtController: ctrlFullname, errorText: 'Please enter your full name', isPassword: false,),
+              Input(hintText: "Your full name", txtController: ctrlFullname, errorText: 'Please enter your full name', isPassword: false, icon: const Icon(Icons.person_2_outlined),),
               const SizedBox(height: 15),
-              Input(hintText: "Phone number", txtController: ctrlPhoneNum, errorText: 'Please enter your phone number', isPassword: false,),
+              Input(hintText: "Phone number", txtController: ctrlPhoneNum, errorText: 'Please enter your phone number', isPassword: false,icon: const Icon(Icons.phone),),
               const SizedBox(height: 15),
-              Input(hintText: "User name", txtController: ctrlUsername, errorText: 'Please enter your user name', isPassword: false,),
+              Input(hintText: "User name", txtController: ctrlUsername, errorText: 'Please enter your user name', isPassword: false,icon: const Icon(Icons.person),),
               const SizedBox(height: 15),
-              Input(hintText: "Password", txtController: ctrlPassword, errorText: 'Please enter your password', isPassword: true,),
+              Input(hintText: "Password", txtController: ctrlPassword, errorText: 'Please enter your password', isPassword: true,icon: const Icon(Icons.password_rounded),),
               const SizedBox(height: 15),
-              Input(hintText: "Comfirm password", txtController: ctrlCofirmPassword, errorText: 'Please enter your confirm password', isPassword: true,),
+              Input(hintText: "Comfirm password", txtController: ctrlCofirmPassword, errorText: 'Please enter your confirm password', isPassword: true,icon: const Icon(Icons.password),),
               const SizedBox(height: 20),
               Button(onTapSignInButton: onTapSignUpButton, textOnButton: 'SIGN UP'),
               const SizedBox(height: 60),
@@ -62,7 +62,7 @@ class SignUpState extends State<SignUp>{
                     onPressed: (){
                         onTapSignInButton(context);
                     }, 
-                    child: const Text("Login")
+                    child: const Text("Login", style: TextStyle(color: Color.fromARGB(255, 0, 7, 73)),)
                   ),
             ],
           ),

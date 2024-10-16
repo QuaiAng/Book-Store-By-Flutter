@@ -22,7 +22,13 @@ class Detail extends StatelessWidget {
           bottomNavigationBar: const Custombottomappbar(),
           body: ListView(
             children: [
-              Text(book.title)
+              Text(
+                book.title,
+                style: const TextStyle(
+                  color: Colors.black,
+                  
+                ),
+               )
             ],
           )
     );
