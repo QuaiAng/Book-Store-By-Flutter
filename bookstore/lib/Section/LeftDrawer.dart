@@ -1,40 +1,54 @@
 import 'package:flutter/material.dart';
 
+
+List<String> directory = [
+  "Sách Tiếng Việt",
+  "Sách Tiếng Anh",
+  "VPP & Học cụ",
+  "Đồ chơi",
+  "Phụ kiện",
+  "Băng đĩa",
+  "Ưu đãi hot",
+  "Sách giáo khoa & dụng cụ các lớp",
+  "Outlet sales"
+];
+
 class Leftdrawer extends StatelessWidget {
   const Leftdrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.zero)
+            ),
             child: ListView(
               children: [
-                // DrawerHeader(
-                //   decoration: BoxDecoration(color: Color.fromARGB(255, 0, 7, 73)),
-                //   child: Text('Directory', style: TextStyle(color: Colors.white, fontSize: 20))
-                // ),
+               
                 Container(
-                  height: 50,
+                  height: 70,
                   alignment: Alignment.center,
                   color: const Color.fromARGB(255, 0, 7, 73),
-                  child: const ListTile(contentPadding: EdgeInsets.only(left: 50),title: Text("Directory", style: TextStyle(color: Colors.white),)),
+                  child: ListTile(
+                    title: const Text('Directory', style: TextStyle(color: Colors.white, fontSize: 25)),
+                    trailing: const Icon(Icons.close),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  )
                 ),
-                const ListTile(
-                  title: Text("1"),
-                ),
-                const ListTile(
-                  title: Text("2"),
-                ),
-                const ListTile(
-                  title: Text("3"),
-                ),
-                const ListTile(
-                  title: Text("4"),
-                ),
-                const ListTile(
-                  title: Text("5"),
-                ),
+                for(int i = 0; i < directory.length; i++)
+                  Column(
+                  children: [
+                    ListTile(
+                    title: Text(directory[i], style: const TextStyle(fontSize: 15),softWrap: true,),
+                    ),
+                    const SizedBox(height: 10,)
+                  ],
+                )
+                
               ],
-            ),
+            )
           );
   }
 }

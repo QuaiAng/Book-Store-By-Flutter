@@ -31,8 +31,8 @@ class SignUpState extends State<SignUp>{
     return Form(
       key: _formKey,
       child: Scaffold(
-        body: SingleChildScrollView(
-        child: Padding(
+        body: ListView(
+        children: [Padding(
           padding: const EdgeInsets.all(30.0), 
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -66,7 +66,7 @@ class SignUpState extends State<SignUp>{
                   ),
             ],
           ),
-        ),
+        ),]
     )
       ) 
     );
