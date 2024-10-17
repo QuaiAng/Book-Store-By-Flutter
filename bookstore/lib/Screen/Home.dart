@@ -2,7 +2,7 @@ import 'package:bookstore/Classes/book.dart';
 import 'package:bookstore/Section/CustomBottomAppbar.dart';
 import 'package:bookstore/Section/Item.dart';
 import 'package:bookstore/Section/LeftDrawer.dart';
-
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,7 +12,9 @@ import 'package:flutter/material.dart';
 
     @override
     Widget build(BuildContext context) {
-
+      
+      var formatter = NumberFormat('#,###');
+      
       const List<String> imagePaths = [
       'images/bn1.png',
       'images/bn2.png',
@@ -58,12 +60,11 @@ import 'package:flutter/material.dart';
                       Item(
                         path: products[index].path, 
                         bookTitle: products[index].title, 
-                        bookPrice: "${products[index].price} VND",
+                        bookPrice: "${formatter.format(products[index].price)} VND",
                         onTap: (){
                           Navigator.pushNamed(context, '/Detail', arguments: products[index]);
                         },
                       ),
-                      if (index < products.length - 1) const Divider(), // Thêm Divider
                     ],
                   );
                   

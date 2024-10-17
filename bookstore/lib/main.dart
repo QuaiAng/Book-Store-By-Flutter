@@ -23,16 +23,16 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
 }
 
 List<Book> products = [
-  Book(id: "H1", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H2", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H3", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H4", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H5", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H6", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H7", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H8", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H9", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),
-  Book(id: "H0", title: "Think Again", price: 4500000, path: "images/thinkagain.png"),  
+  Book(id: "H1", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H2", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H3", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H4", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H5", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H6", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H7", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H8", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H9", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),
+  Book(id: "H0", title: "Dám Nghĩ Lại (Think Again)", price: 150000, path: "images/thinkagain.png"),  
   
 ];
 // Class main

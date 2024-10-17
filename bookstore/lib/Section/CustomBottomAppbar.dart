@@ -6,23 +6,51 @@ class Custombottomappbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                  TextButton(
+      height: 90,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Expanded(
+              flex: 1,
+              child: Column(
+                children: [
+                  IconButton(
                     onPressed: () {},
-                    child: const Text("Trang chủ"),
+                    icon: const Icon(Icons.home_outlined),
+                    iconSize: 30,
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text("Giới thiệu"),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text("Tài khoản"),
-                  ),
+                  Text("Trang chủ")
                 ],
-            ),
-          );
+              )
+          ),
+          Expanded(
+            flex: 1,
+            child: Column(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.info_outline),
+                    iconSize: 30,
+                  ),
+                  Text("Giới thiệu")
+                ],
+              )
+          ),
+          Expanded(
+            flex: 1,
+            child: Column(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: const Icon(Icons.person_outline),
+                    iconSize: 30,
+                  ),
+                  Text("Tài khoản")
+                ],
+              )
+          ),
+        ],
+      ),
+    );
   }
 }
