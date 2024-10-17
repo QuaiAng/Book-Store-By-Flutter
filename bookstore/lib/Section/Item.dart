@@ -1,3 +1,4 @@
+import 'package:bookstore/Res/color.dart';
 import 'package:flutter/material.dart';
 
 class Item extends StatelessWidget {
@@ -14,20 +15,42 @@ class Item extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 5),
-      child: Container(
-        decoration:
-            BoxDecoration(border: Border.all(color: Colors.black, width: 1)),
-        child: ListTile(
-            leading: Image.asset(path),
-            title: Text(
-              bookTitle,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            subtitle: Text(bookPrice),
-            onTap: onTap),
-      ),
-    );
+    return Container(
+        decoration: BoxDecoration(
+          color: colorTheme().backgroundColorProduct,
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+        ),
+        child: InkWell(
+          onTap: onTap, // Sự kiện tap
+          child: Column(
+            children: [
+              Expanded(
+                child: Image.asset(
+                  path,
+                  fit: BoxFit.cover,
+                  width: MediaQuery.sizeOf(context).width,
+                  height: MediaQuery.sizeOf(context).height,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  bookTitle,
+                  style: TextStyle(
+                      fontSize: (MediaQuery.sizeOf(context).width * 0.032), fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(left: 8.0, right: 8.0, bottom: 8.0),
+                child: Text(
+                  bookPrice,
+                  style: TextStyle(fontSize: (MediaQuery.sizeOf(context).width * 0.032)),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
   }
 }

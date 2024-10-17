@@ -6,6 +6,7 @@ class Custombottomappbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      color: Colors.transparent,
       height: 90,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
