@@ -17,7 +17,7 @@ class Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          color: colorTheme().backgroundColorProduct,
+          color: backgroundColorProduct,
           borderRadius: const BorderRadius.all(Radius.circular(8)),
         ),
         child: InkWell(

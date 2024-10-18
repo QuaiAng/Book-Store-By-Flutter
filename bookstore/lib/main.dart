@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:bookstore/Classes/book.dart';
-import 'package:bookstore/Screen/Detail.dart';
-import 'package:bookstore/Screen/Home.dart';
-import 'package:bookstore/Screen/Login.dart';
-import 'package:bookstore/Screen/SignUp.dart';
+import 'package:bookstore/Screens/Detail.dart';
+import 'package:bookstore/Screens/Home.dart';
+import 'package:bookstore/Screens/Login.dart';
+import 'package:bookstore/Screens/SignUp.dart';
 import 'package:flutter/material.dart';
 
 void main() {

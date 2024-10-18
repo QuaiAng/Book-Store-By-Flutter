@@ -1,7 +1,8 @@
 import 'package:bookstore/Classes/book.dart';
+import 'package:bookstore/Res/color.dart';
 import 'package:bookstore/Section/CustomBottomAppbar.dart';
+import 'package:bookstore/Section/DetailBottomAppBar.dart';
 import 'package:bookstore/Section/LeftDrawer.dart';
-import 'package:bookstore/main.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -16,6 +17,7 @@ class Detail extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("DETAIL PRODUCT"),
+          automaticallyImplyLeading: true,
           backgroundColor: const Color.fromARGB(255, 0, 7, 73),
           foregroundColor: Colors.white,
           actions: [
@@ -30,20 +32,9 @@ class Detail extends StatelessWidget {
             ),
           ],
         ),
-        floatingActionButton: SizedBox(
-          width: 100,
-          child: FloatingActionButton(
-            onPressed: () {},
-            backgroundColor: const Color.fromARGB(255, 0, 7, 73),
-            child: const Text(
-              "Mua ngay",
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        drawer: const Leftdrawer(),
-        bottomNavigationBar: const Custombottomappbar(),
+
+       
+        bottomNavigationBar: const Detailbottomappbar(),
         body: ListView(children: [
           Expanded(
             child: Image.asset(
@@ -59,7 +50,7 @@ class Detail extends StatelessWidget {
               children: [
                 Text(
                   "${formatter.format(book.price)}đ",
-                  style: const TextStyle(color: Colors.black, fontSize: 20),
+                  style:  TextStyle(color: colorAppBar, fontSize: 20, fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
                   height: 10,
