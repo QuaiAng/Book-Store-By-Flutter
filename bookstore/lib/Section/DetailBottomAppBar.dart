@@ -1,8 +1,13 @@
+import 'package:bookstore/Classes/book.dart';
+import 'package:bookstore/Classes/bookincart.dart';
 import 'package:bookstore/Res/color.dart';
+import 'package:bookstore/Screens/CartScreen.dart';
+import 'package:bookstore/Screens/DetailScreen.dart';
 import 'package:flutter/material.dart';
 
 class Detailbottomappbar extends StatelessWidget {
-  const Detailbottomappbar({super.key});
+  const Detailbottomappbar({super.key, required this.book});
+  final Book book;
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +20,18 @@ class Detailbottomappbar extends StatelessWidget {
             width: MediaQuery.sizeOf(context).width * 0.3,
             height: double.infinity,
             child: OutlinedButton(
-              onPressed: (){}, 
+              onPressed: (){
+                BookInCart bookIsAdded = BookInCart(title: book.title, price: book.price, isSelected: false, image: book.path, status: true, id: "1");
+                booksAreAddedToCart.add(bookIsAdded);
+                print(booksAreAddedToCart.length);
+              }, 
               style: OutlinedButton.styleFrom(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8),),
                 
               ),
               child: Text(
                "Thêm vào giỏ hàng" ,
-                style: TextStyle(color: colorAppBar, fontSize: MediaQuery.sizeOf(context).width * 0.035),
+                style: TextStyle(color: colorAppBar, fontSize: MediaQuery.sizeOf(context).width * 0.032),
                 textAlign: TextAlign.center,
                 softWrap: true,
                 )
@@ -40,7 +49,7 @@ class Detailbottomappbar extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8))),
               child: Text(
                "Mua ngay" ,
-                style: TextStyle(color: Colors.white,fontSize: MediaQuery.sizeOf(context).width * 0.035),
+                style: TextStyle(color: Colors.white,fontSize: MediaQuery.sizeOf(context).width * 0.032),
                 softWrap: true,
               ),
             ),

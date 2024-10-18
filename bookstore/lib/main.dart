@@ -1,10 +1,11 @@
 import 'dart:ui';
 
 import 'package:bookstore/Classes/book.dart';
-import 'package:bookstore/Screens/Detail.dart';
-import 'package:bookstore/Screens/Home.dart';
-import 'package:bookstore/Screens/Login.dart';
-import 'package:bookstore/Screens/SignUp.dart';
+import 'package:bookstore/Screens/CartScreen.dart';
+import 'package:bookstore/Screens/DetailScreen.dart';
+import 'package:bookstore/Screens/HomeScreen.dart';
+import 'package:bookstore/Screens/LoginScreen.dart';
+import 'package:bookstore/Screens/SignUpScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -51,6 +52,7 @@ class MainApp extends StatelessWidget {
         '/SignUp': (context) => const SignUp(),
         '/Home': (context) => Home(products: products),
         '/Detail': (context) => const Detail(),
+        '/Cart': (context) => const Cart(),
       },
     );
   }

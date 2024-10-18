@@ -1,4 +1,5 @@
 import 'package:bookstore/Classes/book.dart';
+import 'package:bookstore/Res/color.dart';
 import 'package:bookstore/Section/CustomBottomAppbar.dart';
 import 'package:bookstore/Section/Item.dart';
 import 'package:bookstore/Section/LeftDrawer.dart';
@@ -25,10 +26,29 @@ class Home extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text("HOME"),
-          backgroundColor: const Color.fromARGB(255, 0, 7, 73),
-          foregroundColor: Colors.white,
+          title: const Text("HOME", style: TextStyle(fontWeight: FontWeight.bold),),
+          backgroundColor: Colors.transparent,
+          foregroundColor: Colors.black,
+          actions: [
+            
+            Padding(
+              padding: const EdgeInsets.only(right: 10), 
+              child: Container(
+                
+                decoration: BoxDecoration(
+                  color: colorAppBar,
+                  borderRadius: BorderRadius.circular(4)
+                ),
+                child: IconButton(
+                  color: Colors.white,
+                  onPressed: (){}, 
+                  icon: const Icon(Icons.search)
+                ),
+              ),
+            )
+          ],
         ),
+        
         bottomNavigationBar: const Custombottomappbar(),
         drawer: const Leftdrawer(),
         body: SafeArea(
