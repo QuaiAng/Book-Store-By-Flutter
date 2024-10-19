@@ -1,7 +1,8 @@
-import 'package:bookstore/Classes/book.dart';
-import 'package:bookstore/Classes/bookincart.dart';
+import 'package:bookstore/Provider/bookprovider.dart';
+import 'package:bookstore/Section/CartBottomAppBar.dart';
 import 'package:bookstore/Section/ItemInCart.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -10,8 +11,9 @@ class Cart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<BookInCart> books =
-        ModalRoute.of(context)!.settings.arguments as List<BookInCart>;
+
+    var books = Provider.of<BookProvider>(context); // Provider de quan ly trang thai
+
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 233, 233, 233),
         appBar: AppBar(
@@ -27,15 +29,17 @@ class Cart extends StatelessWidget {
             )
           ],
         ),
+        bottomNavigationBar: const Cartbottomappbar(),
         body: ListView.builder(
-            itemCount: books.length,
+            itemCount: books.totalItems,
             itemBuilder: (context, index) {
+              var book = books.booksInCart[index];
               return Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10),
                 child: Column(
                   children: [
-                    Itemincart(book: books[index]),
-                    if(index < books.length - 1)
+                    Itemincart(book: book),
+                    if(index < books.totalItems - 1)
                       const SizedBox(height: 10,)
                   ],
                 ),

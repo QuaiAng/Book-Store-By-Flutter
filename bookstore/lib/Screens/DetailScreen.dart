@@ -1,16 +1,12 @@
 import 'package:bookstore/Classes/book.dart';
-import 'package:bookstore/Classes/bookincart.dart';
 import 'package:bookstore/Res/color.dart';
-import 'package:bookstore/Screens/CartScreen.dart';
-import 'package:bookstore/Section/CustomBottomAppbar.dart';
 import 'package:bookstore/Section/DetailBottomAppBar.dart';
-import 'package:bookstore/Section/LeftDrawer.dart';
 import 'package:bookstore/Section/ExpandableText.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 
-List<BookInCart> booksAreAddedToCart = [];
+
 class Detail extends StatelessWidget {
   const Detail({super.key});
 
@@ -31,7 +27,7 @@ class Detail extends StatelessWidget {
               child: IconButton(
                 icon: const Icon(Icons.shopping_cart_outlined),
                 onPressed: () {
-                  Navigator.pushNamed(context, '/Cart', arguments: booksAreAddedToCart);
+                  Navigator.pushNamed(context, '/Cart');
                 },
               ),
             ),
