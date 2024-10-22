@@ -69,17 +69,13 @@ class CartScreenState extends State<Cart> {
                       var book = books.booksInCart[i];
                       if(books.isCheckAll == true) {
                         book.isSelected = true;
+                        books.totalMoney += book.price;
                         
                       } else {
                         book.isSelected = false;
-                      }
-
-                      if(book.isSelected == true){
-                        books.totalMoney += book.price;
-                      }
-                      else {
                         books.totalMoney = 0;
                       }
+
                     }
                   },
                   checkColor: Colors.white,
