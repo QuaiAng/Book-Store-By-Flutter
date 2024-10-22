@@ -25,6 +25,17 @@ class BookProvider with ChangeNotifier
 ];
    List<Book> get booksInHome => books;
 
+  double totalMoney = 0;
+  void editPrice(double price, bool state){
+    if(state)
+    {totalMoney += price;}
+    else
+    {totalMoney -= price;}
+    notifyListeners();      
+  }
+
+  bool? isCheckAll = false; // Quan ly trang thai co chon het tat ca san pham hay khong
+ 
   void addBook(BookInCart book){
     booksInCart.add(book);
     notifyListeners();

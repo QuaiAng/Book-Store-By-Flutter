@@ -1,16 +1,19 @@
 import 'package:bookstore/Res/color.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Cartbottomappbar extends StatelessWidget {
-  const Cartbottomappbar({super.key});
+  const Cartbottomappbar({super.key, required this.price});
+  final double price;
 
   @override
   Widget build(BuildContext context) {
+    var formatter = NumberFormat('#,###');
     return BottomAppBar(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text("150.000 đ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
+          Text("${formatter.format(price)} đ", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),),
           ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(

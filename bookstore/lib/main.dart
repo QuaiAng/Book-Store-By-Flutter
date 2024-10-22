@@ -43,7 +43,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       scrollBehavior: const MyCustomScrollBehavior(),
-      initialRoute: '/Home',
+      initialRoute: '/Login',
       routes: {
         '/Login': (context) => const Login(),
         '/SignUp': (context) => const SignUp(),
